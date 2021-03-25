@@ -32,6 +32,15 @@ libann-dev \
 libflann-dev \
 liblz4-dev
 
+## additional dependencies for bluebars
+RUN apt-get install -y ros-noetic-pcl-ros
+
+# do user stuff
+RUN useradd -ms /bin/bash user
+RUN mkdir -p /home/user/ROS/src
+RUN chown -R user:user /home/user/
+USER user
+
 # set display env
 ENV DISPLAY :0
 
@@ -43,5 +52,4 @@ RUN cd ~/obviously/build/release && cmake . && make
 
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 # create ROS workspace will later mount packages to build below src
-RUN mkdir -p ~/ROS/src
-WORKDIR /root/ROS
+WORKDIR /home/user/ROS
