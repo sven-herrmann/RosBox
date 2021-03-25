@@ -10,7 +10,8 @@ docker build -t rosbox .
 ```
 docker run -ti --rm --net=host \
 -v ${HOME}/.Xauthority:/home/user/.Xauthority \
--v ${SRC_DIR_WITH_ROS_PKGS}:/home/user/ROS/src \
+-v ${ROS_BUILD_DIR}:/home/user/ROS \
+--device=/dev/dri:/dev/dri \
 rosbox \
 bash
 ```
@@ -25,7 +26,8 @@ export ROS_DOCKER_IMG="rosbox"
 rosbox () {
   docker run -ti --rm --net=host \
     -v ${HOME}/.Xauthority:/home/user/.Xauthority \
-    -v ${ROSHOME}/src:/home/user/ROS/src \
+    -v ${ROSHOME}:/home/user/ROS \
+    --device=/dev/dri:/dev/dri \
     ${ROS_DOCKER_IMG} \
     bash
 }
