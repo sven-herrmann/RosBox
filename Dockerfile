@@ -35,6 +35,12 @@ liblz4-dev
 ## additional dependencies for bluebars
 RUN apt-get install -y ros-noetic-pcl-ros
 
+## additional dependencies for husky/gazebo
+RUN apt-get install -y ros-noetic-robot-localization ros-noetic-joy
+
+## additional dependencies for neowatch
+RUN apt-get install -y libfftw3-dev
+
 # do user stuff
 RUN useradd -ms /bin/bash user
 RUN mkdir -p /home/user/ROS/src
