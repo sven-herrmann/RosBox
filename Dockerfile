@@ -57,6 +57,6 @@ RUN echo "export OBVIOUSLY_ROOT=~/obviously" >> ~/.bashrc
 RUN cd ~/obviously/build/release && cmake . && make
 
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-RUN echo "source $HOME/ROS/setup.bash" >> ~/.bashrc
+RUN echo "source $HOME/ROS/devel/setup.bash" >> ~/.bashrc
 # create ROS workspace will later mount packages to build below src
 WORKDIR /home/user/ROS
