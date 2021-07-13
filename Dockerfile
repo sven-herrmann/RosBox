@@ -41,6 +41,9 @@ RUN apt-get install -y ros-noetic-robot-localization ros-noetic-joy
 ## additional dependencies for neowatch
 RUN apt-get install -y libfftw3-dev
 
+## tmux for convinience
+RUN apt-get install -y tmux
+
 # do user stuff
 RUN useradd -ms /bin/bash user
 RUN mkdir -p /home/user/ROS/src
