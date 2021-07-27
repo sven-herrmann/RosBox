@@ -1,5 +1,7 @@
 FROM osrf/ros:noetic-desktop-full-focal
 
+RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add -
+
 RUN apt-get update && apt-get -y upgrade
 
 # we want git to pull obviously
@@ -43,6 +45,9 @@ RUN apt-get install -y libfftw3-dev
 
 ## tmux for convinience
 RUN apt-get install -y tmux
+
+## misc python3 libs required for simulation
+RUN apt-get install -y python3-docopt python3-pyaudio python3-tk
 
 # do user stuff
 RUN useradd -ms /bin/bash user
