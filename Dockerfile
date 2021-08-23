@@ -35,10 +35,10 @@ libflann-dev \
 liblz4-dev
 
 ## additional dependencies for bluebars
-RUN apt-get install -y ros-noetic-pcl-ros
+RUN apt-get install -y ros-noetic-pcl-ros ros-noetic-dynamixel-workbench ros-noetic-dynamixel-workbench-msgs
 
 ## additional dependencies for husky/gazebo
-RUN apt-get install -y ros-noetic-robot-localization ros-noetic-joy
+RUN apt-get install -y ros-noetic-robot-localization ros-noetic-joy ros-noetic-lms1xx ros-noetic-interactive-marker-twist-server ros-noetic-teleop-twist-joy ros-noetic-twist-mux ros-noetic-ros-control
 
 ## additional dependencies for neowatch
 RUN apt-get install -y libfftw3-dev
@@ -48,6 +48,9 @@ RUN apt-get install -y tmux
 
 ## misc python3 libs required for simulation
 RUN apt-get install -y python3-docopt python3-pyaudio python3-tk
+
+## better rqt_ploting
+RUN apt-get install -y python3-pyqtgraph
 
 # do user stuff
 RUN useradd -ms /bin/bash user
@@ -61,7 +64,7 @@ ENV DISPLAY :0
 # build obviously
 RUN cd ~ && git clone --depth=1 "https://github.com/sven-herrmann/obviously.git"
 ENV OBVIOUSLY_ROOT=~/obviously
-RUN echo "export OBVIOUSLY_ROOT=~/obviously" >> ~/.bashrc
+RUN echo "export OBVIOUSLY_ROOT=${OBVIOUSLY_ROOT}" >> ~/.bashrc
 RUN cd ~/obviously/build/release && cmake . && make
 
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
