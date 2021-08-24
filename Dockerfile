@@ -38,7 +38,7 @@ liblz4-dev
 RUN apt-get install -y ros-noetic-pcl-ros ros-noetic-dynamixel-workbench ros-noetic-dynamixel-workbench-msgs
 
 ## additional dependencies for husky/gazebo
-RUN apt-get install -y ros-noetic-robot-localization ros-noetic-joy ros-noetic-lms1xx ros-noetic-interactive-marker-twist-server ros-noetic-teleop-twist-joy ros-noetic-twist-mux ros-noetic-ros-control
+RUN apt-get install -y ros-noetic-robot-localization ros-noetic-joy ros-noetic-lms1xx ros-noetic-interactive-marker-twist-server ros-noetic-teleop-twist-joy ros-noetic-twist-mux ros-noetic-ros-control ros-noetic-pointcloud-to-laserscan ros-noetic-realsense2-camera ros-noetic-realsense2-description
 
 ## additional dependencies for neowatch
 RUN apt-get install -y libfftw3-dev
