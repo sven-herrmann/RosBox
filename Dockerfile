@@ -40,6 +40,9 @@ RUN apt-get install -y ros-noetic-pcl-ros ros-noetic-dynamixel-workbench ros-noe
 ## additional dependencies for husky/gazebo
 RUN apt-get install -y ros-noetic-robot-localization ros-noetic-joy ros-noetic-lms1xx ros-noetic-interactive-marker-twist-server ros-noetic-teleop-twist-joy ros-noetic-twist-mux ros-noetic-ros-control ros-noetic-pointcloud-to-laserscan ros-noetic-realsense2-camera ros-noetic-realsense2-description
 
+## additional dependencies for shroedi
+RUN apt-get install -y libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev python3-catkin-tools ros-noetic-trac-ik ros-noetic-moveit-ros-planning-interface ros-noetic-nlopt libnlopt-cxx-dev libserial-dev ros-noetic-move-base
+
 ## additional dependencies for neowatch
 RUN apt-get install -y libfftw3-dev
 
