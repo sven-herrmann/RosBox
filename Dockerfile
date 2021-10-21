@@ -50,7 +50,7 @@ RUN apt-get install -y libfftw3-dev
 RUN apt-get install -y tmux
 
 ## misc python3 libs required for simulation
-RUN apt-get install -y python3-docopt python3-pyaudio python3-tk
+RUN apt-get install -y python3-docopt python3-pyaudio python3-tk python3-scipy
 
 ## better rqt_ploting
 RUN apt-get install -y python3-pyqtgraph

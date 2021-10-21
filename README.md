@@ -13,7 +13,7 @@ docker run -ti --rm --net=host \
 -v ${ROS_BUILD_DIR}:/home/user/ROS \
 --device=/dev/dri:/dev/dri \
 rosbox \
-bash
+tmux
 ```
 
 # zsh helper
@@ -29,6 +29,6 @@ rosbox () {
     -v ${ROSHOME}:/home/user/ROS \
     --device=/dev/dri:/dev/dri \
     ${ROS_DOCKER_IMG} \
-    bash
+    tmux
 }
 ```
